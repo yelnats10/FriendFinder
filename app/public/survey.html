@@ -57,7 +57,7 @@
                 <h4>
                     <strong>Question 1</strong>
                 </h4>
-                <label for="q1">Your mind is always buzzing with unexplored ideas and plans.</label>
+                <label for="q1">You like watching Walking Dead. (1 being strongly disagree and 5 being stronly agree)</label>
                 <select class="form-control" id="q1">
                     <option></option>
                     <option>1</option>
@@ -70,7 +70,7 @@
                 <h4>
                     <strong>Question 2</strong>
                 </h4>
-                <label for="q2">Your mind is always buzzing with unexplored ideas and plans.</label>
+                <label for="q2">You like watching marvel movies. (1 being strongly disagree and 5 being stronly agree)</label>
                 <select class="form-control" id="q2">
                     <option></option>
                     <option>1</option>
@@ -83,7 +83,7 @@
                 <h4>
                     <strong>Question 3</strong>
                 </h4>
-                <label for="q3">Your mind is always buzzing with unexplored ideas and plans.</label>
+                <label for="q3">You like watching DC movies. (1 being strongly disagree and 5 being stronly agree)</label>
                 <select class="form-control" id="q3">
                     <option></option>
                     <option>1</option>
@@ -96,7 +96,7 @@
                 <h4>
                     <strong>Question 4</strong>
                 </h4>
-                <label for="q4">Your mind is always buzzing with unexplored ideas and plans.</label>
+                <label for="q4">You like watching Star Wars. (1 being strongly disagree and 5 being stronly agree)</label>
                 <select class="form-control" id="q4">
                     <option></option>
                     <option>1</option>
@@ -109,7 +109,7 @@
                 <h4>
                     <strong>Question 5</strong>
                 </h4>
-                <label for="q5">Your mind is always buzzing with unexplored ideas and plans.</label>
+                <label for="q5">You like watching Star Trek. (1 being strongly disagree and 5 being stronly agree)</label>
                 <select class="form-control" id="q5">
                     <option></option>
                     <option>1</option>
@@ -122,7 +122,7 @@
                 <h4>
                     <strong>Question 6</strong>
                 </h4>
-                <label for="q6">Your mind is always buzzing with unexplored ideas and plans.</label>
+                <label for="q6">You like watching Anime. (1 being strongly disagree and 5 being stronly agree)</label>
                 <select class="form-control" id="q6">
                     <option></option>
                     <option>1</option>
@@ -135,7 +135,7 @@
                 <h4>
                     <strong>Question 7</strong>
                 </h4>
-                <label for="q7">Your mind is always buzzing with unexplored ideas and plans.</label>
+                <label for="q7">You like watching Game of Thrones. (1 being strongly disagree and 5 being stronly agree)</label>
                 <select class="form-control" id="q7">
                     <option></option>
                     <option>1</option>
@@ -148,7 +148,7 @@
                 <h4>
                     <strong>Question 8</strong>
                 </h4>
-                <label for="q8">Your mind is always buzzing with unexplored ideas and plans.</label>
+                <label for="q8">You like watching Modern Family. (1 being strongly disagree and 5 being stronly agree)</label>
                 <select class="form-control" id="q8">
                     <option></option>
                     <option>1</option>
@@ -161,7 +161,7 @@
                 <h4>
                     <strong>Question 9</strong>
                 </h4>
-                <label for="q9">Your mind is always buzzing with unexplored ideas and plans.</label>
+                <label for="q9">You like watching scary movies. (1 being strongly disagree and 5 being stronly agree)</label>
                 <select class="form-control" id="q9">
                     <option></option>
                     <option>1</option>
@@ -174,7 +174,7 @@
                 <h4>
                     <strong>Question 10</strong>
                 </h4>
-                <label for="q10">Your mind is always buzzing with unexplored ideas and plans.</label>
+                <label for="q10">You like watching Netflix shows. (1 being strongly disagree and 5 being stronly agree)</label>
                 <select class="form-control" id="q10">
                     <option></option>
                     <option>1</option>
@@ -209,7 +209,7 @@
         <div class="container">
             <p>
                 <a href="/api/all">API Friends List | </a> |
-                <a href="">GitHub Repo</a>
+                <a href="https://github.com/yelnats10/FriendFinder">GitHub Repo</a>
             </p>
         </div>
     </div>
@@ -232,7 +232,7 @@
                 parseInt($("#q10").val().trim())]
             };
 
-            // console.log(newFriend);
+           
 
             var currentURL = window.location.origin;
 
@@ -241,7 +241,7 @@
             var span = document.getElementsByClassName("close")[0];
 
             $.post(currentURL + "/api/all", newFriend, function (data) {
-                console.log(data);
+              
 
                 modal.style.display = "block";
 
@@ -250,12 +250,14 @@
                 // When the user clicks on <span> (x), close the modal
                 span.onclick = function () {
                     modal.style.display = "none";
+                    
                 }
 
                 // When the user clicks anywhere outside of the modal, close it
                 window.onclick = function (event) {
                     if (event.target == modal) {
                         modal.style.display = "none";
+                       
                     }
                 }
 
@@ -263,7 +265,7 @@
                 var inputImage = $("<img>");
                 inputImage.attr("src", data.photo);
                 inputImage.addClass("input-image img-thumbnail");
-                $("#send_modal").append(name);
+                $("#send_modal").html(name);
                 $("#send_modal").append(inputImage);
 
                 $("#name").val("");

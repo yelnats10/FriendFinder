@@ -1,6 +1,5 @@
 var friends = require('../data/friends.js');
 
-
 module.exports = function (app) {
 
     app.get("/api/all", function (req, res) {
@@ -17,7 +16,7 @@ module.exports = function (app) {
             name: "name to replace",
             photo: "link to replace",
             diff: 100
-        }
+        };
 
         for (var i = 0; i < friends.length; i++) {
 
@@ -26,10 +25,7 @@ module.exports = function (app) {
 
                 dif = dif + Math.abs(parseInt(newFriend.score[j]) - friends[i].score[j]);
 
-
             }
-
-
 
             if (dif < match.diff) {
                 match.diff = dif;
@@ -38,14 +34,10 @@ module.exports = function (app) {
 
             }
 
-
-
         }
-
 
         friends.push(newFriend);
         res.json(match);
     });
-
 
 };
