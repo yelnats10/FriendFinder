@@ -14,33 +14,37 @@ module.exports = function (app) {
         // newReservation.routeName = newReservation.name.replace(/\s+/g, "").toLowerCase();
 
         var match = {
-            name: "test",
-            photo: "link",
+            name: "name to replace",
+            photo: "link to replace",
             diff: 100
         }
-        
-       for(var i = 0; i < friends.length; i++){
-           console.log(friends[i].name);
-           var dif = 0
-           for(var j = 0; j < friends[i].score.length; j++){
-               
-           dif = dif + Math.abs(parseInt(newFriend.score[j]) - friends[i].score[j]);
+
+        for (var i = 0; i < friends.length; i++) {
+
+            var dif = 0;
+            for (var j = 0; j < friends[i].score.length; j++) {
+
+                dif = dif + Math.abs(parseInt(newFriend.score[j]) - friends[i].score[j]);
 
 
-           
+            }
 
 
 
+            if (dif < match.diff) {
+                match.diff = dif;
+                match.name = friends[i].name;
+                match.photo = friends[i].photo;
 
-           }
-           console.log(dif);
+            }
 
 
-       }
+
+        }
 
 
-       friends.push(newFriend);
-       res.json(match);
+        friends.push(newFriend);
+        res.json(match);
     });
 
 
