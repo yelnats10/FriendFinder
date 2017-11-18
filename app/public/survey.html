@@ -154,16 +154,16 @@
         var newFriend = {
             name: $("#name").val().trim(),
             photo: $("#link").val().trim(),
-            score: [$("#q1").val().trim(),
-            $("#q2").val().trim(),
-            $("#q3").val().trim(),
-            $("#q4").val().trim(),
-            $("#q5").val().trim(),
-            $("#q6").val().trim(),
-            $("#q7").val().trim(),
-            $("#q8").val().trim(),
-            $("#q9").val().trim(),
-            $("#q10").val().trim()]
+            score: [parseInt($("#q1").val().trim()),
+            parseInt($("#q2").val().trim()),
+            parseInt($("#q3").val().trim()),
+            parseInt($("#q4").val().trim()),
+            parseInt($("#q5").val().trim()),
+            parseInt($("#q6").val().trim()),
+            parseInt($("#q7").val().trim()),
+            parseInt($("#q8").val().trim()),
+            parseInt($("#q9").val().trim()),
+            parseInt($("#q10").val().trim())]
         };
 
         console.log(newFriend);
@@ -174,19 +174,23 @@
             console.log(data);
             alert("Adding frend...");
           });
-            $("#name").val("");
-            $("#link").val("");
-            $("#q1").val("");
-            $("#q2").val("");
-            $("#q3").val("");
-            $("#q4").val("");
-            $("#q5").val("");
-            $("#q6").val("");
-            $("#q7").val("");
-            $("#q8").val("");
-            $("#q9").val("");
-            $("#q10").val("");
+            // $("#name").val("");
+            // $("#link").val("");
+            // $("#q1").val("");
+            // $("#q2").val("");
+            // $("#q3").val("");
+            // $("#q4").val("");
+            // $("#q5").val("");
+            // $("#q6").val("");
+            // $("#q7").val("");
+            // $("#q8").val("");
+            // $("#q9").val("");
+            // $("#q10").val("");
     });
+
+
+
+
 
 </script>
 

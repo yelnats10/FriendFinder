@@ -13,8 +13,34 @@ module.exports = function (app) {
         var newFriend = req.body;
         // newReservation.routeName = newReservation.name.replace(/\s+/g, "").toLowerCase();
 
+        var match = {
+            name: "test",
+            photo: "link",
+            diff: 100
+        }
+        
+       for(var i = 0; i < friends.length; i++){
+           console.log(friends[i].name);
+           var dif = 0
+           for(var j = 0; j < friends[i].score.length; j++){
+               
+           dif = dif + Math.abs(parseInt(newFriend.score[j]) - friends[i].score[j]);
 
-        friends.push(newFriend);
+
+           
+
+
+
+
+           }
+           console.log(dif);
+
+
+       }
+
+
+       friends.push(newFriend);
+       res.json(match);
     });
 
 
